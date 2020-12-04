@@ -3,9 +3,11 @@
 
 ## 效果如下
 
-![Cloudflare][1]
+![Cloudflare-dash][1]
+![Cloudflare-dash][4]
 
 [1]:https://raw.githubusercontent.com/limbopro/Cloudflare4limbo/main/photo_2020-03-06_16-28-57.jpg
+[4]:https://raw.githubusercontent.com/limbopro/Cloudflare4limbo/main/photo_2020-01-04_16-31-16.jpg
 
 ## 原理
 
