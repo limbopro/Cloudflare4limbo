@@ -5,7 +5,7 @@
 
 ![Cloudflare][1]
 
-[1]:https://raw.githubusercontent.com/limbopro/Cloudflare4limbo/main/photo_2020-01-04_16-31-16.jpg
+[1]:https://raw.githubusercontent.com/limbopro/Cloudflare4limbo/main/photo_2020-03-06_16-28-57.jpg
 
 ## 原理
 
