@@ -18,8 +18,8 @@
 
 ## 新建IP访问规则API
 
-- 对应页面：登入 Cloudflare  - 选择你已添加的网站 - 防火墙（Firewalls）；
-- 官方 API 参考：https://api.cloudflare.com/#user-level-firewall-access-rule-create-access-rule
+- 对应手动操作页面：登入 Cloudflare  - 选择你已添加的网站 - 防火墙（Firewalls）；
+- Create Access Rule API 参考：https://api.cloudflare.com/#user-level-firewall-access-rule-create-access-rule
 
 ```
 curl -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules" \
@@ -29,7 +29,7 @@ curl -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules/ru
      --data '{"mode":"challenge","configuration":{"target":"ip","value":"198.51.100.4"},"notes":"This rule is on because of an event that occured on date X"}'
 ```
 
-- 运用示例
+- 运用示例 submit.blackip.sh
 
 ```
 #!/bin/bash 
@@ -50,3 +50,9 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONESID/firewall/ac
 done
 
 ```
+
+至此，大家可以新建一个文本，然后去运行一下 脚本，记得 ` chmod +x submit.blackip.sh`；
+
+## 捕获异常IP并存入文本
+
+
