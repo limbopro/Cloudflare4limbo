@@ -18,7 +18,7 @@
 [2]:https://support.cloudflare.com/hc/article_attachments/360029342112/What_is_Cloudflare_v7.png
 [3]:https://support.cloudflare.com/hc/zh-cn/articles/205177068-Cloudflare-的工作原理是什么-
 
-## 新建IP访问规则API
+## 新建IP访问规则-API
 
 - 对应手动操作页面：登入 Cloudflare  - 选择你已添加的网站 - 防火墙（Firewalls）；
 - Create Access Rule API 参考：https://api.cloudflare.com/#user-level-firewall-access-rule-create-access-rule
@@ -74,14 +74,9 @@ function define()
 
 function gather()
 {
-    #awk -F '[/ "\[]' -vnstamp="$date_stamp" -vdstamp="$day_stamp" '$7>=nstamp && $5==dstamp' ${ori_log_path} > ${tmp_log_path}; #根据时间范围从原始日志处读取并写入临时日志
     awk -F '[/ "[]' -vnstamp="$date_stamp" -vdstamp="$day_stamp" '$7>=nstamp && $5==dstamp' ${ori_log_path} > ${tmp_log_path}; #根据时间范围从原始日志处读取并写入临时日志
     log_num=`cat ${tmp_log_path} | wc -l`; #计算时间范围内的网络请求次数
-    request_time=`awk '{print $(NF-1)}' ${tmp_log_path} | awk '{sum+=$1}END{print sum}'`; #请求时间
-    ave_request_time=`echo | awk "{print ${request_time}/${log_num}}" `; #平均请求时间
     ipcounts=$(awk '{print $1}' $tmp_log_path | sort -n | uniq | wc -l); #计算IP数量
-    date=$(env LANG=en_US.UTF-8 date "+%e/%b/%Y/%R")
-    echo "${date}" "网站最近"${maxtimes}"分钟总请求数为 ${log_num}" 次
 }
 
 function output()
@@ -98,7 +93,7 @@ function main()
 ## 拉取日志结束
 main
 
-## 拉黑开始
+## 生成IP黑名单
 echocf=/home/blackip.list #Cloudflare 黑名单收集 会销毁
 
 ##记录每次操作
@@ -109,4 +104,5 @@ echo "${ip}" >> $echocf
 done
 ```
 
+此处生成的黑名单，将在 新建IP访问规则 时调用；
 
