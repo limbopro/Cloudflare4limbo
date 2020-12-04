@@ -1,5 +1,5 @@
 # Cloudflare4limbo
-利用 Cloudflare 强大的API及时封禁异常IP访问，自动开启防御、清理页面CDN缓存，过期解禁IP。
+利用 Cloudflare 强大的API及时封禁异常IP访问，自动开启防御、清理页面CDN缓存，过期解禁IP。进入 Cloudflare 控制面板后请自行更改界面语言为中文，本文将基于此条件下写成；
 
 ## 效果如下
 
