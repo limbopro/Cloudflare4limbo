@@ -106,5 +106,8 @@ done
 
 此处生成的黑名单，将在 新建IP访问规则 时调用；
 
-一些参考资料：[Cloudflare 下 Nginx 获取用户真实IP 地址](https://limbopro.xyz/archives/1481.html)
+一些参考资料：[Cloudflare 下 Nginx 获取用户真实IP 地址](https://limbopro.xyz/archives/1481.html);
+
+建站指南：[建站指南与优化/DDoS防御](https://limbopro.xyz/category/LNMP/)
+
 
